@@ -15,21 +15,27 @@ let lower = document.getElementById("lower");
 let copy = document.getElementById("copy");
 let reset = document.getElementById("reset");
 
+let toggleBtn = document.getElementById("toggle-btn");
+let container = document.getElementById("container");
+
 boldBtn.addEventListener("click", function () {
 
-    textInput.style.fontWeight = "bold";
+    textInput.style.fontWeight =
+    textInput.style.fontWeight === "bold" ? "normal" : "bold";
 
 });
 
 italicBtn.addEventListener("click", function () {
 
-    textInput.style.fontStyle = "italic";
+    textInput.style.fontStyle = 
+    textInput.style.fontStyle === "italic" ? "normal" : "italic";
 
 });
 
 underlineBtn.addEventListener("click", function () {
 
-    textInput.style.textDecoration = "underline";
+    textInput.style.textDecoration = 
+    textInput.style.textDecoration === "underline" ? "none" : "underline";
 
 });
 
@@ -82,13 +88,13 @@ bgColor.addEventListener("input", function () {
 
 upper.addEventListener("click", function () {
 
-    textInput.style.textTransform = "uppercase"
+    textInput.style.textTransform = "uppercase";
     
 })
 
 lower.addEventListener("click", function () {
 
-    textInput.style.textTransform = "lowercase"
+    textInput.style.textTransform = "lowercase";
     
 })
 
@@ -117,10 +123,28 @@ reset.addEventListener("click", function () {
     textInput.style.textDecoration = "none";
     textInput.style.textAlign = "left";
     textInput.style.color = "silver";
-    textInput.style.backgroundColor = "#1a1a1a";
     textInput.style.textTransform = "none";
 
     fontSize = 18;
     textInput.style.fontSize = fontSize + "px";
 
+   
+    if(document.body.classList.contains("light-mode")){
+        textInput.style.backgroundColor = "#f4f6fb"; 
+        textInput.style.color = "#2c2c2c"; 
+    } else {
+        textInput.style.backgroundColor = "#1a1a1a"; 
+        textInput.style.color = "silver"; 
+    }
+
 });
+
+
+
+
+toggleBtn.addEventListener("change", function(){
+
+    document.body.classList.toggle("light-mode");
+
+});
+
