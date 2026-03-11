@@ -21,6 +21,7 @@ body {
     box-shadow: 
         8px 8px 20px #0d0d0d,
         -8px -8px 20px #2a2a2a;
+        position: relative;
 }
 
 .main-heading {
@@ -28,6 +29,7 @@ body {
     margin-bottom: 25px;
     color: silver;
     letter-spacing: 2px;
+    
 }
 
 textarea {
@@ -92,4 +94,102 @@ input[type="color"] {
         -6px -6px 12px #2a2a2a;
 }
 
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  position: absolute;
+  right: 3%;
+  top: 4%;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: .4s;
+  border-radius: 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 0.1em;
+  border-radius: 0px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(0, 0, 0);
+}
+
+input:checked + .slider:before {
+  transform: translateX(2.8em) rotate(360deg);
+}
+
+
+
+
+.light-mode{
+  background: linear-gradient(145deg,#f4f6fb,#e6ebf5);
+}
+
+.light-mode .main-container{
+  background:#f4f6fb;
+
+box-shadow: 10px 10px 25px #c8ceda,
+           -10px -10px 25px #ffffff;
+}
+
+.light-mode textarea{
+  background:#f4f6fb;
+  color:#2c2c2c;
+  box-shadow: inset 6px 6px 12px #c8ceda,
+              inset -6px -6px 12px #e6e5e5;
+}
+
+.light-mode button{
+  background:#f4f6fb;
+  color:#333;
+  box-shadow: 6px 6px 14px #c8ceda,
+             -6px -6px 14px #ffffff;
+}
+
+.light-mode button:active{
+  box-shadow: inset 6px 6px 12px #c8ceda,
+              inset -6px -6px 12px #ffffff;
+}
+
+.light-mode input[type="color"]{
+  background:#f4f6fb;
+  box-shadow: 6px 6px 14px #c8ceda,
+             -6px -6px 14px #ffffff;
+}
+
+.light-mode .main-heading{
+  color:#2c2c2c;
+}
+
+.light-mode textarea::placeholder{
+  color:#666;
+}
 
