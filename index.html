@@ -14,12 +14,16 @@
 
 <body>
 
-    <div class="main-container">
+    <div class="main-container" id="container">
 
         <h1 class="main-heading">Text Editor</h1>
 
+        <label class="switch">
+            <input type="checkbox" id="toggle-btn">
+            <span class="slider"></span>
+        </label>
 
-        <textarea id="textInput" placeholder="Type your text here..."></textarea>
+        <textarea id="textInput" placeholder="Type your text here..." contenteditable="true"></textarea>
 
 
         <div class="buttons-container">
